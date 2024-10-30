@@ -106,6 +106,12 @@ script = ExtResource("1_qglfh")
 sprite_frames = SubResource("SpriteFrames_t6vty")
 frame_progress = 0.977236
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 3
+shape = SubResource("CircleShape2D_uu557")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 3
 shape = SubResource("CircleShape2D_uu557")

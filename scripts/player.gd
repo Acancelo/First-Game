@@ -5,6 +5,8 @@ const JUMP_VELOCITY = -300.0
 const MAX_JUMPS = 2  # Número máximo de saltos (doble salto)
 const DASH_SPEED = 300.0  # Velocidad del dash
 const DASH_DURATION = 0.2  # Duración del dash en segundos
+var MAX_ROCKS = 5 # Numero de rocas maximas
+var rocks_remaining = MAX_ROCKS  # Rocas disponibles
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -12,9 +14,50 @@ var jumps_left = MAX_JUMPS
 var is_dashing = false
 var dash_timer = 0.0
 var dash_direction = 0.0
+var facing_right = true
 var can_dash = true
 
+# Cargar la escena de la roca
+@onready var rock_scene = preload("res://scenes/rock.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
+
+func _process(delta):
+	# Actualiza la dirección del jugador cuando se mueve
+	if Input.is_action_pressed("move_right"):
+		facing_right = true
+	elif Input.is_action_pressed("move_left"):
+		facing_right = false
+
+	# Lanza una roca si el jugador presiona el botón y tiene rocas disponibles
+	if Input.is_action_just_pressed("throw_rock") and rocks_remaining > 0:
+		throw_rock()
+
+	# Recarga rocas si el jugador presiona el botón de recarga
+	if Input.is_action_just_pressed("reload_rocks"):
+		reload_rocks()
+
+
+func throw_rock():
+	# Instancia y lanza la roca solo si hay rocas disponibles
+	if rocks_remaining > 0:
+		var rock_instance = rock_scene.instantiate()
+		rock_instance.position = position  # Coloca la roca en la posición del jugador
+		get_parent().add_child(rock_instance)  # Añade la roca a la escena
+
+		# Reduce el conteo de rocas disponibles
+		rocks_remaining -= 1
+		print("Rocas restantes:", rocks_remaining)
+	else:
+		print("No quedan rocas para lanzar.")
+		
+	# Recarga rocas si el jugador presiona el botón de recarga
+	if Input.is_action_just_pressed("reload_rocks"):
+		reload_rocks()
+#Funcion para recargar rocas
+func reload_rocks():
+	rocks_remaining = MAX_ROCKS
+	print("Rocas recargadas:", rocks_remaining)
+	
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_dashing:
@@ -59,7 +102,7 @@ func _physics_process(delta):
 			if direction == 0:
 				animated_sprite.play("idle")
 			else:
-				animated_sprite.play("run")
+				animated_sprite.play("walk")
 		else:
 			animated_sprite.play("jump")
 
