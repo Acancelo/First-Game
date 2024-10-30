@@ -13,18 +13,8 @@ var is_dashing = false
 var dash_timer = 0.0
 var dash_direction = 0.0
 var can_dash = true
-var coin_counter = 0 # Contador para el score de los coin
 
 @onready var animated_sprite = $AnimatedSprite2D
-
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("Coin"):
-		set_coin(coin_counter + 1)
-		print(coin_counter)
-
-# Contador de coin
-func set_coin(new_coin_counter: int) -> void:
-	coin_counter = new_coin_counter
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_dashing:

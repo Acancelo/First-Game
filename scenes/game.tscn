@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy8b02yekfn8q"]
+[gd_scene load_steps=9 format=3 uid="uid://dy8b02yekfn8q"]
 
 [ext_resource type="PackedScene" uid="uid://r0x31m2lgk7j" path="res://scenes/player.tscn" id="1_hbafv"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_dj4kf"]
@@ -436,6 +436,9 @@ texture = ExtResource("2_dj4kf")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ocys5")
 
+[sub_resource type="LabelSettings" id="LabelSettings_aw6i8"]
+font_size = 48
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -515,3 +518,14 @@ light_mask = 3
 visibility_layer = 3
 zoom = Vector2(4, 4)
 limit_bottom = 50
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 180.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_aw6i8")
