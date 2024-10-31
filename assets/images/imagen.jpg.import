@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb677si0o6hcr"
-path="res://.godot/imported/Owlet_Monster.png-3fb0afb47894dc7739690d0fef5beb9d.ctex"
+uid="uid://djvs2evfa0o35"
+path="res://.godot/imported/imagen.jpg-9aeb5effce538661683264cd3ab85cba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2 Owlet_Monster/Owlet_Monster.png"
-dest_files=["res://.godot/imported/Owlet_Monster.png-3fb0afb47894dc7739690d0fef5beb9d.ctex"]
+source_file="res://assets/images/imagen.jpg"
+dest_files=["res://.godot/imported/imagen.jpg-9aeb5effce538661683264cd3ab85cba.ctex"]
 
 [params]
 

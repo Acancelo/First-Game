@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnybgtco5iq2s"
+path="res://.godot/imported/Cancion juego.mp3-43d64d4bef572bd62e1bda0703f220ea.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Cancion juego.mp3"
+dest_files=["res://.godot/imported/Cancion juego.mp3-43d64d4bef572bd62e1bda0703f220ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

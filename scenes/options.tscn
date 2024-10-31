@@ -1,16 +1,85 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsbevevd7i40c"]
+[gd_scene load_steps=9 format=3 uid="uid://bsbevevd7i40c"]
 
-[ext_resource type="Texture2D" uid="uid://c0f2sww8083ve" path="res://images/wallpapersden.com_landscape-pixel-art_1920x1080.jpg" id="1_kfhqq"]
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_n860s"]
+[ext_resource type="Texture2D" uid="uid://djvs2evfa0o35" path="res://assets/images/imagen.jpg" id="2_jw2oy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cde43"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk8m8"]
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gox8s"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdem"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s0um"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3fsx"]
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk4vg"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifxf7"]
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aih3w"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -21,22 +90,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n860s")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.133333, 0.427451, 0.427451, 1)
-
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kfhqq")
+texture = ExtResource("2_jw2oy")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -56,23 +116,29 @@ theme_override_constants/separation = 19
 
 [node name="Boton Volumen" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_cde43")
-text = "Volumen"
+theme_override_styles/normal = SubResource("StyleBoxFlat_nk8m8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0tdem")
+text = "VOLUMEN"
 
 [node name="Boton Resolucion" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_gox8s")
-text = "Resolucion"
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3fsx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mk4vg")
+text = "RESOLUCION
+"
 
 [node name="Boton Atras" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_6s0um")
-text = "Atras"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifxf7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aih3w")
+text = "ATRAS
+"
 
-[connection signal="pressed" from="VBoxContainer/Boton Atras" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/Boton Atras" to="." method="_on_boton_atras_pressed"]

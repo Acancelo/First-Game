@@ -1,16 +1,85 @@
-[gd_scene load_steps=6 format=3 uid="uid://jj0rau0jm7rj"]
+[gd_scene load_steps=9 format=3 uid="uid://jj0rau0jm7rj"]
 
-[ext_resource type="Texture2D" uid="uid://c0f2sww8083ve" path="res://images/wallpapersden.com_landscape-pixel-art_1920x1080.jpg" id="1_nf5gj"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_vmhb7"]
+[ext_resource type="Texture2D" uid="uid://djvs2evfa0o35" path="res://assets/images/imagen.jpg" id="2_ejtn5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qwt4"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqbb4"]
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhj0g"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhrs5"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l5tr"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufmdb"]
-bg_color = Color(0.65098, 0.309804, 0.435294, 0.415686)
+bg_color = Color(0.666667, 0, 0.823529, 0.415686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjg2e"]
+bg_color = Color(0.423529, 0, 0.529412, 0.415686)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -21,23 +90,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vmhb7")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.133333, 0.427451, 0.427451, 1)
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_nf5gj")
+texture = ExtResource("2_ejtn5")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -57,25 +116,28 @@ theme_override_constants/separation = 19
 
 [node name="Boton Jugar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_6qwt4")
-text = "Jugar"
+theme_override_styles/normal = SubResource("StyleBoxFlat_sqbb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uhj0g")
+text = "JUGAR"
 
 [node name="Boton Opciones" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_bhrs5")
-text = "Opciones
-"
+theme_override_styles/hover = SubResource("StyleBoxFlat_1l5tr")
+text = "OPCIONES"
 
 [node name="Boton Salir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ufmdb")
-text = "Salir
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjg2e")
+text = "SALIR
 "
 
 [connection signal="pressed" from="VBoxContainer/Boton Jugar" to="." method="_on_boton_jugar_pressed"]

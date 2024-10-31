@@ -183,8 +183,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0foa"]
-size = Vector2(15.8529, 28)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofbg3"]
+size = Vector2(17, 27)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -197,9 +197,5 @@ sprite_frames = SubResource("SpriteFrames_75435")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 3
-visibility_layer = 3
-z_index = 5
-position = Vector2(-5, 2)
-scale = Vector2(1.00928, 1)
-shape = SubResource("RectangleShape2D_q0foa")
+position = Vector2(-5.5, 1.5)
+shape = SubResource("RectangleShape2D_ofbg3")
