@@ -1,14 +1,13 @@
 extends CharacterBody2D
-
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+# ---------------------------- Variables ------------------------------------
+const SPEED = 130.0 # Velocidad del personaje
+const JUMP_VELOCITY = -300.0 # Velocidad del salto
 const MAX_JUMPS = 2  # Número máximo de saltos (doble salto)
 const DASH_SPEED = 300.0  # Velocidad del dash
 const DASH_DURATION = 0.2  # Duración del dash en segundos
 var MAX_ROCKS = 5 # Numero de rocas maximas
 var rocks_remaining = MAX_ROCKS  # Rocas disponibles
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jumps_left = MAX_JUMPS
 var is_dashing = false
@@ -16,11 +15,11 @@ var dash_timer = 0.0
 var dash_direction = 0.0
 var facing_right = true
 var can_dash = true
-
+# -------------------------- Cargar escenas -------------------------------
 # Cargar la escena de la roca
 @onready var rock_scene = preload("res://scenes/rock.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
-
+# ------------------------- Funciones -----------------------------------
 func _process(delta):
 	# Actualiza la dirección del jugador cuando se mueve
 	if Input.is_action_pressed("move_right"):
@@ -36,9 +35,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("reload_rocks"):
 		reload_rocks()
 
-
+#Funcion para lanzar la roca
 func throw_rock():
-	# Instancia y lanza la roca solo si hay rocas disponibles
 	if rocks_remaining > 0:
 		var rock_instance = rock_scene.instantiate()
 		rock_instance.position = position  # Coloca la roca en la posición del jugador
@@ -58,7 +56,7 @@ func reload_rocks():
 	rocks_remaining = MAX_ROCKS
 	print("Rocas recargadas:", rocks_remaining)
 	
-
+#Funcion para los saltos
 func _physics_process(delta):
 	if not is_on_floor() and not is_dashing:
 		velocity.y += gravity * delta
